@@ -12,30 +12,26 @@ class Titulo extends StatelessWidget {
     if (numeroLineas > 0) {
       return Container(
         margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
-        child: Flexible(
-          child: Text(
-            titulo,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 45,
-              fontWeight: FontWeight.bold,
-            ),
+        child: Text(
+          titulo,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 45,
+            fontWeight: FontWeight.bold,
           ),
         ),
       );
     }
     return Container(
       margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
-      child: Flexible(
-        child: Text(
-          titulo,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 45,
-            fontWeight: FontWeight.bold,
-          ),
+      child: Text(
+        titulo,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 45,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

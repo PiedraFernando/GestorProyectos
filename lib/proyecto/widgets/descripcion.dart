@@ -12,28 +12,24 @@ class Descripcion extends StatelessWidget {
     if (numeroLineas > 0) {
       return Container(
         margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
-        child: Flexible(
-          child: Text(
-            descripcion,
-            maxLines: numeroLineas,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-              fontSize: 20,
-            ),
+        child: Text(
+          descripcion,
+          maxLines: numeroLineas,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.justify,
+          style: TextStyle(
+            fontSize: 20,
           ),
         ),
       );
     }
     return Container(
       margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
-      child: Flexible(
-        child: Text(
-          descripcion,
-          textAlign: TextAlign.justify,
-          style: TextStyle(
-            fontSize: 20,
-          ),
+      child: Text(
+        descripcion,
+        textAlign: TextAlign.justify,
+        style: TextStyle(
+          fontSize: 20,
         ),
       ),
     );
