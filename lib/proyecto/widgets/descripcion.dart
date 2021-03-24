@@ -1,4 +1,6 @@
-//Widget para la descripcion
+//Widget para la descripcion recive:
+// titulo: string
+// numero de lineas: int
 import 'package:flutter/material.dart';
 
 class Descripcion extends StatelessWidget {

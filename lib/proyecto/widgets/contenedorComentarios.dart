@@ -1,19 +1,59 @@
 //Contendra los comentarios del proyecto
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gestor_proyectos/proyecto/widgets/comentario.dart';
 
 class ContenedorComentarios extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Comentario("Usuario",
-            "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."),
-        Comentario("Usuario",
-            "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."),
-        Comentario("Usuario",
-            "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."),
-      ],
-    );
+    List<String> nombres = [
+      "Fernando Piedra",
+      'Israel Rios',
+      'Reyes Montero',
+      'Karen Liset',
+      'Yogana Chavez',
+      'Alfonsa Planas',
+      'Judit Montes',
+      'Ibai Quiñones',
+      'Norberto Chamorro',
+      'Rosario Pla',
+      'Constantino Costas',
+      'Mireya Melendez',
+    ];
+    List<String> opiniones = [
+      "Fernando Piedra",
+      'Israel Rios',
+      'Reyes Montero',
+      'Karen Liset',
+      'Yogana Chavez',
+      'Alfonsa Planas',
+      'Judit Montes',
+      'Ibai Quiñones',
+      'Norberto Chamorro',
+      'Rosario Pla',
+      'Constantino Costas',
+      'Mireya Melendez',
+    ];
+    List<String> frases = [
+      "Me parece buena idea el modificar ",
+      'Falta modificar',
+      'Se tiene que mejorar',
+      'Tendriamos que hacer mas en cuestion de',
+    ];
+    List<String> trabajos = [
+      "las Pantallas",
+      'las Vistas',
+      'la Logica',
+      'los objetivo',
+    ];
+    List<Comentario> comentarios = List<Comentario>();
+    int numRandom = Random().nextInt(20);
+    for (int i = 0; i < numRandom; i++) {
+      String nombreRandom = nombres[Random().nextInt(11)];
+      String comentarioRandom =
+          frases[Random().nextInt(4)] + " " + trabajos[Random().nextInt(4)];
+      comentarios.add(Comentario(nombreRandom, comentarioRandom));
+    }
+    return Column(children: comentarios);
   }
 }

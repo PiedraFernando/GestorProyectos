@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:gestor_proyectos/proyecto/widgets/titulo.dart';
 import 'package:gestor_proyectos/proyecto/widgets/descripcion.dart';
+import '../pantallas/contenedorProyecto.dart';
 
 class PrevistaProyeco extends StatelessWidget {
   final String titulo;
@@ -26,14 +27,20 @@ class PrevistaProyeco extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Titulo(titulo),
+          Titulo(titulo, 1),
           Descripcion(descripcion, 3),
           Padding(
             padding: EdgeInsets.all(10),
             child: MaterialButton(
               minWidth: 200.0,
               height: 40.0,
-              onPressed: () {},
+              onPressed: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ContenedorProyecto(titulo, descripcion)))
+              },
               color: Colors.lightBlue,
               child: Text('Ver mas', style: TextStyle(color: Colors.white)),
             ),
