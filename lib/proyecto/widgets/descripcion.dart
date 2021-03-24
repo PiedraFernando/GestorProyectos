@@ -1,11 +1,28 @@
-//Widget para el comentario
+//Widget para la descripcion
 import 'package:flutter/material.dart';
 
 class Descripcion extends StatelessWidget {
   final String descripcion;
-  Descripcion(this.descripcion);
+  final int numeroLineas;
+  Descripcion(this.descripcion, this.numeroLineas);
   @override
   Widget build(BuildContext context) {
+    if (numeroLineas > 0) {
+      return Container(
+        margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
+        child: Flexible(
+          child: Text(
+            descripcion,
+            maxLines: numeroLineas,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.justify,
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
+        ),
+      );
+    }
     return Container(
       margin: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 0),
       child: Flexible(

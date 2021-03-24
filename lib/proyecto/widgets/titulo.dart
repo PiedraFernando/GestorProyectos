@@ -1,4 +1,4 @@
-//Widget para el comentario
+//Widget para el titulo
 import 'package:flutter/material.dart';
 
 class Titulo extends StatelessWidget {
